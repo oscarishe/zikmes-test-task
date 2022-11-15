@@ -11,6 +11,7 @@ body {
     background: url(./img/background.png) no-repeat;
     background-size: cover;
 }
+
 .order {
     width: 768px;
     display: flex;
@@ -19,6 +20,7 @@ body {
     flex-direction: column;
     position: relative;
 }
+
 %input-styles {
     outline: none;
     border: none;
@@ -30,6 +32,7 @@ body {
     font-weight: bold;
     line-height: 50px;
 }
+
 .notice {
     position: absolute;
     padding: 5px;
@@ -39,12 +42,15 @@ body {
     font-size: 1.2em;
     text-align: center;
 }
+
 .notice_success {
     color:#50C878;
 }
+
 .notice_error {
     color:#00008B;
 }
+
 @keyframes appear {
     from {
         transform: translateY(200px);
@@ -55,52 +61,64 @@ body {
         opacity: 1;
     }
 }
+
 .form {
     display: flex;
     width: 80%;
+
     &__input {
         @extend %input-styles;
     }
+
     &__submit {
         @extend %input-styles;
         color:#FFF;
         cursor: pointer;
     }
+
     &__section {
         transform: skew(-45deg);
         border: 3px solid #FFF;
+
         &_input {
             flex-grow: 2;
             background: rgba(255, 255, 255, 0.5);
             padding-left: 25px;
         }
+
         &_submit {
             flex-grow: 1;
             background: #50C878;
             cursor: pointer;
         }
+
         &_disabled {
             background: #EE4B2B;
         }
     }
 }
 @media (max-width:768px) {
+
     .order {
         width:100%;
     }
+
     .form {
         &__section {
             transform: skew(0deg);
         }
+
         &__input, &__submit {
             transform: skew(0deg);
         }
     }
 }
 @media (max-width:460px) {
+
     .fa-solid {
         display: none;
     }
+    
     .fa-cart-shopping {
         display: none;
     }
