@@ -2,7 +2,7 @@ const URL = 'https://jsonplaceholder.typicode.com/posts';
 
 export default class Form {
     constructor() {
-        this.main = document.querySelector('.order');
+        this.container = document.querySelector('.order');
         this.form = document.querySelector('.form')
         this.input = document.querySelector('.form__input');
         this.submit = document.querySelector('.form__submit');
@@ -34,13 +34,13 @@ export default class Form {
         this.notice.innerText = 'Ошибка сервера';
         this.notice.classList.add('notice_error');
         this.notice.classList.remove('notice_success');
-        this.main.append(this.notice);
+        this.container.append(this.notice);
     }
     showPhoneError() {
         this.notice.innerText = 'Неправильный номер телефона';
         this.notice.classList.add('notice_error');
         this.notice.classList.remove('notice_success');
-        this.main.append(this.notice);
+        this.container.append(this.notice);
     }
     hideError() {
         this.notice.remove();
@@ -49,8 +49,10 @@ export default class Form {
         this.notice.classList.remove('notice_error');
         this.notice.classList.add('notice_success');
         this.notice.innerText = 'Данные успешно отправлены';
-        this.main.append(this.notice);
+        this.container.append(this.notice);
         this.clearForm();
+        this.submitContainer.classList.add('form__section_disabled');
+        this.submit.disabled = true;
     }
     clearForm() {
         this.input.value = '';
